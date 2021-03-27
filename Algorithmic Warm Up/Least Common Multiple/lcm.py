@@ -11,10 +11,20 @@ def lcm_naive(a, b):
     return multiple
 
 
+def euclid(a, remainder):
+    if remainder == 0:
+        return a
+
+    return euclid(remainder, a % remainder)
+
+
 def lcm(a, b):
     assert 1 <= a <= 2 * 10 ** 9 and 1 <= b <= 2 * 10 ** 9
 
-    type here
+    #print(lcm_naive(a, b))
+
+    result = euclid(b, a % b)
+    return int((a * b) / result)
 
 
 if __name__ == '__main__':

@@ -9,7 +9,7 @@ class TestLCM(unittest.TestCase):
             self.assertEqual(lcm(a, b), lcm_naive(a, b))
 
     def test_large(self):
-        for (a, b, m) in [(28851538, 1183019, 1933053046), type here]:
+        for (a, b, m) in [(28851538, 1183019, 1933053046), (898765431, 432589033, 388796068690118208)]:
             self.assertEqual(lcm(a, b), m)
 
 
