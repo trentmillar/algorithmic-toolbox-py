@@ -13,7 +13,15 @@ def last_digit_of_fibonacci_number_naive(n):
 def last_digit_of_fibonacci_number(n):
     assert 0 <= n <= 10 ** 7
 
-    type here
+    fib_table = [0, 1]
+
+    for i in range(1, n + 1):
+        if i <= 1:
+            continue
+
+        fib_table.append((fib_table[i - 1] + fib_table[i - 2]) % 10)
+
+    return fib_table[n]
 
 
 if __name__ == '__main__':

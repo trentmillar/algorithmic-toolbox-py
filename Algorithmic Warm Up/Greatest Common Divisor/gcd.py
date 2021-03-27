@@ -1,4 +1,5 @@
 # python3
+import math
 
 
 def gcd_naive(a, b):
@@ -11,12 +12,26 @@ def gcd_naive(a, b):
     assert False
 
 
+COUNTER = 0
+
+
 def gcd(a, b):
     assert 0 <= a <= 2 * 10 ** 9 and 0 <= b <= 2 * 10 ** 9
 
-    type here
+    global COUNTER
+    COUNTER = COUNTER + 1
+    #print("iteration {}".format(COUNTER))
+    if 0 == b:
+        return a
+
+    remainder = a % b
+
+    return gcd(b, remainder)
 
 
 if __name__ == '__main__':
     input_a, input_b = map(int, input().split())
     print(gcd(input_a, input_b))
+
+    # O(log(ab))
+    #print("BigO(log({}*{})) => {}".format(input_a, input_b, math.log10(input_a * input_b)))
